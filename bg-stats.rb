@@ -41,6 +41,6 @@ File.open("bg-results.log", "w") do |f|
   f.puts "-" * header.size
 
   sorted_by_total_time.each do |pair|
-    f.puts "#{pair[0].rjust(pad[:name])} #{pair[1][0].to_s.rjust(pad[:time])} #{pair[1][1].to_s.rjust(pad[:db])} #{pair[1][2].to_s.rjust(pad[:cpu])} #{pair[1][3].to_s.rjust(pad[:freq])} #{pair[1][4].to_s.rjust(pad[:avg])}"
+    f.puts "#{pair[0].rjust(pad[:name])} #{pair[1][0].to_s.rjust(pad[:time])} #{pair[1][1].to_s.rjust(pad[:db])} #{pair[1][2].to_s.rjust(pad[:cpu])} #{pair[1][3].to_s.rjust(pad[:freq])} #{("%0.2f" % pair[1][4]).rjust(pad[:avg])}"
   end
 end

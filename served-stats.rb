@@ -63,6 +63,6 @@ File.open("served-results.log", "w") do |f|
   f.puts "-" * header.size
 
   sorted_by_total_time.each do |pair|
-    f.puts "#{pair[0].ljust(pad[:uri])} #{pair[1][0].to_s.rjust(pad[:time])} #{pair[1][1].to_s.rjust(pad[:freq])} #{pair[1][2].to_s.rjust(pad[:avg])}"
+    f.puts "#{pair[0].ljust(pad[:uri])} #{pair[1][0].to_s.rjust(pad[:time])} #{pair[1][1].to_s.rjust(pad[:freq])} #{("%0.2f" % pair[1][2]).rjust(pad[:avg])}"
   end
 end
